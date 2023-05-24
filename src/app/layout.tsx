@@ -1,6 +1,8 @@
 // Components
 import Footer from '@/components/sections/Footer'
 import Navbar from '@/components/navigation/Navbar'
+import Loading from './loading'
+import { Suspense } from 'react'
 // Scripts
 import GoogleSearchScript from '@/components/app/GoogleSearchScript'
 import GoogleAnalyticsScript from '@/components/app/GoogleAnalyticsScript'
@@ -60,11 +62,13 @@ export default function RootLayout ({ children }: Parent) {
   return (
     <html lang='es-MX'>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <GoogleSearchScript />
-        <GoogleAnalyticsScript />
+        <Suspense fallback={<Loading />}>
+          <Navbar />
+          {children}
+          <Footer />
+          <GoogleSearchScript />
+          <GoogleAnalyticsScript /> 
+        </Suspense>
       </body>
     </html>
   )

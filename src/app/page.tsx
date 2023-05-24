@@ -4,12 +4,15 @@ import Image from 'next/image'
 import LinkToContact from '@/components/navigation/LinkToContact'
 import LinkToServices from '@/components/navigation/LinkToServices'
 // Config
-import { SERVICES, description } from '@/modules/app/config'
+import { SERVICES, VALUES, description } from '@/modules/app/config'
 import { IMG_EXT } from '@/modules/data-display/config'
 import { SECTION_ROUTES, sectionsImgPath } from '@/modules/navigation/config'
+import { THEMES } from '@/modules/theme/config'
 
-/** A list with the services key names */
+/** A list with the services names */
 const SERVICES_NAMES: ReadonlyArray<string> = Object.keys(SERVICES)
+/** A list with the values names */
+const VALUES_NAMES: ReadonlyArray<string> = Object.keys(VALUES)
 
 /** The home page of the application */
 export default function HomePage () {
@@ -17,7 +20,7 @@ export default function HomePage () {
     <main>
       <section className='h-3xl md:h-2xl relative'>
         <div className='max-w-8xl h-full px-3% mx-auto flex flex-col justify-center text-white'>
-          <div className='max-w-2xl space-y-8 text-center-sm'>
+          <div className='max-w-4xl space-y-8 text-center-sm'>
             <h1>{description}</h1>
             <p className='font-primary-bold text-lg'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi numquam illum qui
@@ -60,8 +63,12 @@ export default function HomePage () {
           {SERVICES_NAMES.map((service, key) => (
             <article className='py-12 lg:py-6 flex flex-col-reverse lg:flex-row justify-between items-start gap-y-6 lg:gap-x-12 border-b-2 first:border-t-2 border-primary/40' key={key}>
               <header className='lg:w-xl space-y-6 lg:space-y-16 text-center lg:text-left'>
-                <h3>{SERVICES[service].heading}</h3>
-                <p className='text-lg text-primary'>{SERVICES[service].description}</p>
+                <h3>
+                  {SERVICES[service].heading}
+                </h3>
+                <p className='text-lg text-primary'>
+                  {SERVICES[service].description}
+                </p>
               </header>
               <Image
                 src={`${sectionsImgPath}${service}.${IMG_EXT.jpg}`}
@@ -77,7 +84,7 @@ export default function HomePage () {
 
       <section
         id={SECTION_ROUTES.about}
-        className='pb-24 px-5% space-y-12 lg:space-y-24 text-white bg-secondary'
+        className='py-24 px-5% space-y-12 lg:space-y-24 text-white bg-gradient-to-br from-primary via-primary-light to-primary-light'
       >
         <header className='text-center'>
           <h2>
@@ -102,16 +109,16 @@ export default function HomePage () {
           </article>
         </div>
         <div className='grid place-content-center'>
-          <LinkToContact />
+          <LinkToContact theme={THEMES.secondary} />
         </div>
       </section>
 
       <section
-        className='px-5% py-24'
         id={SECTION_ROUTES.values}
+        className='grid md:grid-cols-2 lg:grid-cols-3 text-center md:text-left'
       >
-        <header className='space-y-10'>
-          <h2>
+        <header className='py-12 px-8 md:p-8 space-y-5 text-white bg-secondary'>
+          <h2 className='font-primary-bold text-3xl'>
             Nuestros valores
           </h2>
           <p>
@@ -120,6 +127,26 @@ export default function HomePage () {
             y son fundamentales para nuestra cultura empresarial.
           </p>
         </header>
+
+        {VALUES_NAMES.map((values, key) => (
+          <article
+            className='p-8 space-y-4 flex flex-col justify-center'
+            key={key}
+          >
+            <div>
+              <h3 className='font-primary-bold text-xl'>
+                {VALUES[values].heading}
+              </h3>
+            </div>
+            <p className='text-sm text-prmary'>
+              {VALUES[values].description}
+            </p>
+          </article>
+        ))}
+
+        <div className='py-6 grid place-content-center bg-primary'>
+          <LinkToContact theme={THEMES.secondary} />
+        </div>
       </section>
     </main>
   )

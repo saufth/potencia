@@ -18,7 +18,7 @@ export const baseUrl: URL = new URL(`https://${domain}`)
 export const organization = 'Potencia Logistics & Transportation'
 
 /** The head desciption of the application */
-export const description = 'Entregaremos lo que necesitas – rápido'
+export const description = 'Calidad, precio y rapidez trabajando para ti'
 
 /** The email of the organizacion */
 export const email = `contacto@${domain}`

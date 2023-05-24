@@ -7,5 +7,5 @@
 }
 
 .btn__secondary {
-  @apply text-secondary bg-primary hover:bg-white;
+  @apply text-secondary bg-white hover:bg-primary;
 }
