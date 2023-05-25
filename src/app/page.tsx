@@ -20,7 +20,7 @@ export default function HomePage () {
     <main>
       <section className='h-3xl md:h-2xl relative'>
         <div className='max-w-8xl h-full px-3% mx-auto flex flex-col justify-center text-white'>
-          <div className='max-w-4xl space-y-8 text-center-sm'>
+          <div className='max-w-4xl space-y-8 text-center-md'>
             <h1>{description}</h1>
             <p className='font-primary-bold text-lg'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi numquam illum qui
