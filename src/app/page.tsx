@@ -115,13 +115,13 @@ export default function HomePage () {
 
       <section
         id={SECTION_ROUTES.values}
-        className='grid md:grid-cols-2 lg:grid-cols-3 text-center md:text-left'
+        className='grid md:grid-cols-2 lg:grid-cols-3 text-center md:text-left [&>*]:h-xs'
       >
-        <header className='py-12 px-8 md:p-8 space-y-5 text-white bg-secondary'>
-          <h2 className='font-primary-bold text-3xl'>
+        <header className='py-12 px-8 md:p-8 flex flex-col justify-center gap-y-5 text-primary-light bg-secondary'>
+          <h2 className='font-primary-black text-4xl'>
             Nuestros valores
           </h2>
-          <p>
+          <p className='font-primary-bold text-lg'>
             Nuestros valores corporativos definen el estándar por el que nos esforzamos en
             cada área, reflejan la dedicación a la excelencia que brindamos en el servicio
             y son fundamentales para nuestra cultura empresarial.
@@ -130,21 +130,21 @@ export default function HomePage () {
 
         {VALUES_NAMES.map((values, key) => (
           <article
-            className='p-8 space-y-4 flex flex-col justify-center'
+            className='p-8 space-y-4 flex flex-col justify-center border boder-seondary'
             key={key}
           >
             <div>
-              <h3 className='font-primary-bold text-xl'>
+              <h3 className='font-primary-bold text-2xl'>
                 {VALUES[values].heading}
               </h3>
             </div>
-            <p className='text-sm text-prmary'>
+            <p className='text-prmary'>
               {VALUES[values].description}
             </p>
           </article>
         ))}
 
-        <div className='py-6 grid place-content-center bg-primary'>
+        <div className='py-6 grid place-content-center bg-primary-light'>
           <LinkToContact theme={THEMES.secondary} />
         </div>
       </section>
