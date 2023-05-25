@@ -1,5 +1,7 @@
 // Components
 import Link from './core/Link'
+import LinkEmail from './LinkEmail'
+import LinkToContact from './LinkToContact'
 // Hooks
 import useDimensions from '../../modules/sizing/hooks/useDimensions'
 // Animation
@@ -66,7 +68,7 @@ export default function Menu ({ isOpen, action }: MenuProps) {
     >
       <motion.ul
         aria-label={navAriaLabel}
-        className='w-full h-screen pt-4 fixed top-0 left-0 z-60 overflow-hidden grid place-content-center gap-y-6 text-center'
+        className='w-full h-screen pt-4 fixed top-0 left-0 z-60 overflow-hidden grid place-content-center gap-y-6 text-primary-light text-center'
         variants={MENU_VARIANTS}
       >
         <div className='text-sm'>
@@ -74,16 +76,22 @@ export default function Menu ({ isOpen, action }: MenuProps) {
         </div>
 
         {Object.values(NAV).map((option, key) => (
-          <li onClick={action} key={key}>
-            <Link href={option.href} size={SIZES.lg}>
-              {option.children}
-            </Link>
-          </li>
+          option.href !== NAV.contact.href
+            ? (
+              <li onClick={action} key={key}>
+                <Link href={option.href} size={SIZES.lg}>
+                  {option.children}
+                </Link>
+              </li>
+              )
+            : <LinkToContact key={key} />
         ))}
+
+        <LinkEmail />
       </motion.ul>
 
       <motion.div
-        className='w-full h-screen fixed top-0 z-50 bg-white'
+        className='w-full h-screen fixed top-0 z-50 bg-secondary'
         variants={BG_VARIANTS}
       />
     </motion.nav>

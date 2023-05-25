@@ -46,7 +46,7 @@ export default function Navbar () {
             {[NAV.solutions, NAV.about, NAV.values, NAV.history].map(({ children, href }, key) => {
               return (
                 <div className='hidden lg:block' key={key}>
-                  <Link href={href} size={SIZES.md} theme={THEMES.secondary}>
+                  <Link href={href} size={SIZES.sm} theme={THEMES.secondary}>
                     {children.toUpperCase()}
                   </Link>
                 </div>
@@ -61,7 +61,7 @@ export default function Navbar () {
             {isOpen
               ? (
                 <div
-                  className='w-7 md:w-8 h-7 md:h-8 grid place-content-center text-4xl cursor-pointer'
+                  className='w-7 md:w-8 h-7 md:h-8 grid place-content-center font-primary-light text-primary text-4xl cursor-pointer'
                   onClick={handleToggle}
                 >
                   X

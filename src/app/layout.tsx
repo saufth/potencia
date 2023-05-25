@@ -14,7 +14,7 @@ import type { Parent } from '@/types/layout'
 // Styles
 import '@/styles/globals.css'
 
-/** The head metadata configuration */
+/** The main head metadata configuration */
 export const metadata: Metadata = {
   title: {
     default: organization,
@@ -67,7 +67,7 @@ export default function RootLayout ({ children }: Parent) {
           {children}
           <Footer />
           <GoogleSearchScript />
-          <GoogleAnalyticsScript /> 
+          <GoogleAnalyticsScript />
         </Suspense>
       </body>
     </html>

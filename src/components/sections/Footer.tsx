@@ -34,7 +34,7 @@ export default function Footer () {
                   key={key}
                 >
                   <Link href={navItem.href} theme={THEMES.secondary} size={SIZES.sm}>
-                    {navItem.children.toUpperCase()}
+                    {navItem.children}
                   </Link>
                 </li>
               ))}

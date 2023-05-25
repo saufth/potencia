@@ -10,14 +10,14 @@ import type { ThemeStyleConfig } from '@/types/theme'
 
 /** The link size style configuration */
 const SIZE_STYLES: SizeStyleConfig = {
-  sm: 'text-sm',
+  sm: '',
   md: 'font-primary-bold',
-  lg: 'text-3xl'
+  lg: 'font-primary-black text-3xl'
 }
 
 /** The link theme style configuration */
 const THEME_STYLES: ThemeStyleConfig = {
-  primary: '',
+  primary: 'text-primary-light',
   secondary: 'text-white'
 }
 
@@ -43,7 +43,7 @@ export default function Link ({
 
   return (
     <NextLink
-      className={`font-primary-semibold hover:underline transition-all ${linkStyle}`}
+      className={`hover:underline transition-all ${linkStyle}`}
       href={href}
       target={target}
       rel={rel}
