@@ -43,11 +43,11 @@ export default function HomePage () {
           <Image
             src={`${sectionsImgPath}${SECTION_ROUTES.solutions}.${IMG_EXT.jpg}`}
             alt={SECTION_ROUTES.solutions}
-            className='lg:w-1/2 h-auto'
+            className='lg:w-11/20 h-auto'
             width={1260}
             height={840}
           />
-          <header className='lg:w-1/2 px-5% space-y-6 text-center lg:text-left'>
+          <header className='lg:w-9/20 px-5% space-y-6 text-center lg:text-left'>
             <h2>Nuestras soluciones</h2>
             <p className='text-lg text-primary leading-relaxed'>
               Nos importa mucho entender lo que necesitas y cómo lo necesitas, para poder ofrecerte
