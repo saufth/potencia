@@ -6,7 +6,7 @@ import LinkToServices from '@/components/navigation/LinkToServices'
 // Config
 import { SERVICES, VALUES, description } from '@/modules/app/config'
 import { IMG_EXT } from '@/modules/data-display/config'
-import { SECTION_ROUTES, sectionsImgPath } from '@/modules/navigation/config'
+import { APP_ROUTES, sectionsImgPath } from '@/modules/navigation/config'
 import { THEMES } from '@/modules/theme/config'
 
 /** A list with the services names */
@@ -36,13 +36,13 @@ export default function HomePage () {
       </section>
 
       <section
-        id={SECTION_ROUTES.solutions}
+        id={APP_ROUTES[1]}
         className='py-24 text-white bg-secondary space-y-12 lg:space-y-24'
       >
         <div className='flex flex-col-reverse lg:flex-row items-center gap-y-12 lg:gap-0'>
           <Image
-            src={`${sectionsImgPath}${SECTION_ROUTES.solutions}.${IMG_EXT.jpg}`}
-            alt={SECTION_ROUTES.solutions}
+            src={`${sectionsImgPath}${APP_ROUTES[1]}.${IMG_EXT.jpg}`}
+            alt={APP_ROUTES[1]}
             className='lg:w-11/20 h-auto hidden lg:block'
             width={1260}
             height={840}
@@ -83,7 +83,7 @@ export default function HomePage () {
       </section>
 
       <section
-        id={SECTION_ROUTES.about}
+        id={APP_ROUTES[2]}
         className='py-24 md:py-36 px-5% space-y-12 lg:space-y-20 text-white bg-gradient-to-br from-primary via-primary-light to-primary-light'
       >
         <header className='text-center'>
@@ -116,7 +116,7 @@ export default function HomePage () {
       </section>
 
       <section
-        id={SECTION_ROUTES.values}
+        id={APP_ROUTES[3]}
         className='grid md:grid-cols-2 lg:grid-cols-3 text-center md:text-left'
       >
         <header className='h-md md:h-xs py-12 px-8 md:p-8 flex flex-col justify-center gap-y-5 row-span-2 md:row-span-1 md:col-span-2 bg-secondary'>

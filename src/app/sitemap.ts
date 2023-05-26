@@ -1,6 +1,6 @@
 // Config
 import { baseUrl } from '@/modules/app/config'
-import { PAGE_ROUTES } from '@/modules/navigation/config'
+import { APP_ROUTES } from '@/modules/navigation/config'
 // Types
 import type { MetadataRoute } from 'next'
 
@@ -12,11 +12,11 @@ export default function sitemap () : MetadataRoute.Sitemap {
       lastModified: new Date()
     },
     {
-      url: `${baseUrl.host}${PAGE_ROUTES.history}`,
+      url: `${baseUrl.host}${APP_ROUTES[4]}`,
       lastModified: new Date()
     },
     {
-      url: `${baseUrl.host}${PAGE_ROUTES.contact}`,
+      url: `${baseUrl.host}${APP_ROUTES[5]}`,
       lastModified: new Date()
     }
   ]
