@@ -111,6 +111,3 @@ export const keywords = [
   SERVICES.spareParts.heading,
   SERVICES.monitoring.heading
 ]
-
-/** Is used as a cover image for social networks */
-export const coverImageUrl: URL = new URL('cover.jpg', baseUrl)
