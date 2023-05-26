@@ -4,15 +4,84 @@ import Image from 'next/image'
 import LinkToContact from '@/components/navigation/LinkToContact'
 import LinkToServices from '@/components/navigation/LinkToServices'
 // Config
-import { SERVICES, VALUES, description } from '@/modules/app/config'
+import { SERVICES, description } from '@/modules/app/config'
 import { IMG_EXT } from '@/modules/data-display/config'
 import { APP_ROUTES, sectionsImgPath } from '@/modules/navigation/config'
 import { THEMES } from '@/modules/theme/config'
+// Types
+import type { HeaderListConfig } from '@/types/data-dislay'
 
-/** A list with the services names */
-const SERVICES_NAMES: ReadonlyArray<string> = Object.keys(SERVICES)
-/** A list with the values names */
-const VALUES_NAMES: ReadonlyArray<string> = Object.keys(VALUES)
+/** The headers configuration for solutions section */
+const SOLUTIONS: HeaderListConfig = [
+  {
+    heading: SERVICES[0],
+    description: 'Contamos con un equipo de expertos en logística y transporte que brindan asesoría y consultoría a clientes en temas como la optimización de procesos, la gestión de inventarios, la selección de proveedores, entre otros.'
+  },
+  {
+    heading: SERVICES[1],
+    description: 'Nuestros vehículos cuentan con la comodidad y modernidad necesarias para asegurar que sus empleados lleguen en tiempo y forma. Además las unidades de transporte están en constante mantenimiento, desde sedanes y SUVs hasta minibuses y autocares. Estos vehículos están equipados con todas las comodidades necesarias para garantizar un viaje óptimo.'
+  },
+  {
+    heading: SERVICES[2],
+    description: 'En el transporte de carga, la eficiencia y la seguridad son primordiales, por ello contamos con una flota de vehículos moderna y en óptimas condiciones, así como conductores con amplia experiencia en el manejo de cargas. '
+  },
+  {
+    heading: SERVICES[3],
+    description: 'Ofrecemos servicios de empaquetado, embalaje y entarimado de mercancías, respondiendo a la necesidad de que los productos sean transportados de manera segura, protegida y en perfecto estado.'
+  },
+  {
+    heading: SERVICES[4],
+    description: 'Tenemos a disposición un equipo de conductores altamente capacitado y con la experiencia necesaria para transportar mercancía. Nuestra flota se adapta a las solicitudes de los clientes y a los requerimientos de las cargas. '
+  },
+  {
+    heading: SERVICES[5],
+    description: 'Entendemos que el transporte de personal es un tema sensible, ya que se trata de la seguridad y comodidad de las personas, por lo que respondemos a la necesidad de transportar a sus empleados al lugar de trabajo, garantizando un traslado seguro.'
+  },
+  {
+    heading: SERVICES[6],
+    description: 'Nos encargamos de la planificación y optimización de rutas de transporte, utilizando herramientas tecnológicas para minimizar los tiempos de entrega y mejorar la eficiencia en la distribución de las mercancías.'
+  },
+  {
+    heading: SERVICES[7],
+    description: 'Sabemos la importancia de contar con refacciones de calidad en la industria del transporte. Por eso, trabajamos con los principales proveedores del mercado para ofrecer a nuestros clientes refacciones de alta calidad y con garantía. Además, nuestro equipo de expertos en logística y transporte está siempre a disposición de los clientes para asesorarles en la selección de las refacciones más adecuadas para sus vehículos y necesidades específicas. '
+  },
+  {
+    heading: SERVICES[8],
+    description: 'Buscamos ofrecer servicios eficientes y adecuados de monitoreo y rastreo de las mercancías transportadas, lo que permite a nuestros clientes conocer en todo momento la ubicación y el estado de sus productos. Esto brinda una mayor seguridad en el transporte y una mejor gestión de los tiempos de entrega.'
+  }
+]
+
+/** The headers configuration for values section */
+const VALUES: HeaderListConfig = [
+  {
+    heading: 'Profesionalismo',
+    description: 'Los clientes esperan un alto nivel de profesionalismo en el trato, así como en la ejecución de los servicios ofrecidos. La compañía debe asegurarse de que su equipo sea altamente capacitado y tenga una actitud respetuosa y cortés hacia sus clientes.'
+  },
+  {
+    heading: 'Responsabilidad',
+    description: 'La empresa de logística y transportación debe ser responsable en el manejo de la mercancía y cumplir con las fechas de entrega prometidas. Además, deben tener una actitud proactiva en la identificación y resolución de problemas durante el transporte.'
+  },
+  {
+    heading: 'Innovación',
+    description: 'Una empresa de logística y transportación debe estar siempre buscando maneras de mejorar y optimizar sus servicios, mediante la adopción de nuevas tecnologías y la implementación de nuevas ideas.'
+  },
+  {
+    heading: 'Flexibilidad',
+    description: 'Se debe ser flexible en la adaptación a las necesidades y requerimientos específicos de cada cliente, así como a los cambios en el mercado o en las condiciones de transporte.'
+  },
+  {
+    heading: 'Honestidad',
+    description: 'La empresa debe ser transparente en su operación y cumplir con los términos acordados con los clientes que le permitan construir relaciones duraderas y confiables.'
+  },
+  {
+    heading: 'Seguridad',
+    description: 'Es una prioridad en el transporte de mercancías y debe estar comprometida con la implementación de protocolos seguros, así como el cuidado del medio ambiente.'
+  },
+  {
+    heading: 'Trabajo en equipo',
+    description: 'Una empresa de logística y transportación exitosa requiere de un equipo altamente colaborativo y eficiente, trabajando en conjunto para garantizar el mejor servicio al cliente.'
+  }
+]
 
 /** The home page of the application */
 export default function HomePage () {
@@ -60,19 +129,19 @@ export default function HomePage () {
         </div>
 
         <div className='px-5'>
-          {SERVICES_NAMES.map((service, key) => (
+          {SOLUTIONS.map((service, key) => (
             <article className='py-12 lg:py-6 flex flex-col-reverse lg:flex-row justify-between items-start gap-y-6 lg:gap-x-12 border-t-2 first:border-t-0 border-primary/40' key={key}>
               <header className='lg:w-xl space-y-6 lg:space-y-8 text-center lg:text-left'>
                 <h3>
-                  {SERVICES[service].heading}
+                  {service.heading}
                 </h3>
                 <p className='text-primary leading-relaxed'>
-                  {SERVICES[service].description}
+                  {service.description}
                 </p>
               </header>
               <Image
-                src={`${sectionsImgPath}${service}.${IMG_EXT.jpg}`}
-                alt={service}
+                src={`${sectionsImgPath}service${key}.${IMG_EXT.jpg}`}
+                alt={service.heading}
                 className='lg:max-w-lg h-auto'
                 width={1260}
                 height={840}
@@ -130,25 +199,25 @@ export default function HomePage () {
           </p>
         </header>
 
-        {VALUES_NAMES.map((value, key) => (
+        {VALUES.map((value, key) => (
           <article
             className='h-xs p-8 space-y-4 flex flex-col justify-center border boder-seondary'
             key={key}
           >
             <span className='flex items-center justify-center md:justify-start gap-x-5'>
               <Image
-                src={`${sectionsImgPath}${value}.${IMG_EXT.svg}`}
-                alt={VALUES[value].heading}
+                src={`${sectionsImgPath}value${key}.${IMG_EXT.svg}`}
+                alt={value.heading}
                 className='w-auto h-8 md:h-12'
                 width={250}
                 height={250}
               />
               <h3 className='text-primary-light'>
-                {VALUES[value].heading}
+                {value.heading}
               </h3>
             </span>
             <p className='text-prmary leading-relaxed'>
-              {VALUES[value].description}
+              {value.description}
             </p>
           </article>
         ))}

@@ -7,7 +7,7 @@ import { Suspense } from 'react'
 import GoogleSearchScript from '@/components/app/GoogleSearchScript'
 import GoogleAnalyticsScript from '@/components/app/GoogleAnalyticsScript'
 // Config
-import { description, organization, keywords, authors, baseUrl } from '@/modules/app/config'
+import { description, organization, keywords, authors, baseUrl, themeColor } from '@/modules/app/config'
 // Types
 import type { Metadata } from 'next'
 import type { Parent } from '@/types/layout'
@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   creator: authors.name,
   publisher: authors.name,
   generator: 'Next.js',
-  manifest: new URL('site.webmanifest', baseUrl),
-  referrer: 'origin-when-cross-origin',
   robots: 'index, follow',
   openGraph: {
     title: organization,
@@ -39,7 +37,7 @@ export const metadata: Metadata = {
     locale: 'es-MX',
     type: 'website'
   },
-  themeColor: '#2E2E2E',
+  themeColor,
   formatDetection: {
     email: false,
     address: false,

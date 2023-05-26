@@ -16,7 +16,7 @@ export interface HeaderProps {
 export type HeaderList = Record<string, HeaderProps>
 
 /** Used for header list configuration */
-export type HeaderListConfig = Readonly<Record<string, Readonly<HeaderProps>>>
+export type HeaderListConfig = ReadonlyArray<HeaderProps>
 
 /** Image properties */
 export interface ImageProps extends Dimensionable {

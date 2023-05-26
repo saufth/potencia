@@ -4,7 +4,7 @@ import { APP_ROUTES } from '@/modules/navigation/config'
 // Types
 import type { MetadataRoute } from 'next'
 
-/** Generate the sitemap.xml document */
+/** Generate the sitemap document */
 export default function sitemap () : MetadataRoute.Sitemap {
   return [
     {

@@ -1,12 +1,14 @@
 // Components
 import Link from './core/Link'
 // Config
-import { email } from '@/modules/app/config'
+import { domain } from '@/modules/app/config'
 // Types
 import type { Themeable } from '@/types/theme'
 
+/** The email of the organizacion */
+const email = `contacto@${domain}`
 /** The email hypertext reference */
-const mailto = `mailto:${email}`
+const mailto = `mailto:contacto@${domain}`
 
 /**
  * The main link to redirect to the default email provider interface of the user

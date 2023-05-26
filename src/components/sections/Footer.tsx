@@ -6,7 +6,7 @@ import LinkEmail from '../navigation/LinkEmail'
 import NextLink from 'next/link'
 // Config
 import { NAV, navAriaLabel } from '@/modules/navigation/config'
-import { copyright, organization } from '@/modules/app/config'
+import { organization } from '@/modules/app/config'
 import { THEMES } from '@/modules/theme/config'
 import { SIZES } from '@/modules/sizing/config'
 
@@ -50,7 +50,7 @@ export default function Footer () {
       </div>
       <div>
         <div className='max-w-8xl px-1 py-4 mx-auto text-white text-center'>
-          {copyright}
+          {`Copyright ${new Date().getFullYear()} ${organization}. All rights reserved.`}
         </div>
       </div>
     </footer>

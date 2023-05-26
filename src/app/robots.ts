@@ -1,7 +1,9 @@
+// Config
 import { baseUrl } from '@/modules/app/config'
-import { MetadataRoute } from 'next'
+// Types
+import type { MetadataRoute } from 'next'
 
-/** Generate the robots.txt document */
+/** Generate the robots document */
 export default function Robots () : MetadataRoute.Robots {
   return {
     rules: {
