@@ -4,7 +4,6 @@ import { organization } from '../app/config'
 import type {
   AppRouteConfig,
   NavConfig,
-  Navigable,
   PageRouteConfig,
   SectionRouteConfig
 } from '@/types/navigation'
@@ -30,35 +29,32 @@ export const APP_ROUTES: AppRouteConfig = {
 }
 
 /** The main navigation configuration of the application */
-export const NAV: NavConfig = {
-  home: { // Page route
+export const NAV: NavConfig = [
+  { // Page route
     children: 'Inicio',
     href: '/' // The home reference always is '/'
   },
-  solutions: { // Section route
+  { // Section route
     children: 'Soluciones',
     href: `/#${APP_ROUTES.solutions}`
   },
-  about: { // Section route
+  { // Section route
     children: 'Nosotros',
     href: `/#${APP_ROUTES.about}`
   },
-  values: { // Section route
+  { // Section route
     children: 'Valores',
     href: `/#${APP_ROUTES.values}`
   },
-  history: { // Page route
+  { // Page route
     children: 'Historia',
     href: `/${APP_ROUTES.history}`
   },
-  contact: { // Page route
+  { // Page route
     children: 'Contáctanos',
     href: `/${APP_ROUTES.contact}`
   }
-}
-
-/** The navigation list configuration */
-export const NAV_LIST: ReadonlyArray<Navigable> = Object.values(NAV)
+]
 
 /** The aria label for navigation directories */
 export const navAriaLabel = `${organization} directorio`

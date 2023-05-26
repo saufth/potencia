@@ -69,7 +69,7 @@ export const VALUES: HeaderListConfig = {
     heading: 'Profesionalismo',
     description: 'Los clientes esperan un alto nivel de profesionalismo en el trato, así como en la ejecución de los servicios ofrecidos. La compañía debe asegurarse de que su equipo sea altamente capacitado y tenga una actitud respetuosa y cortés hacia sus clientes.'
   },
-  responsabilidad: {
+  responsability: {
     heading: 'Responsabilidad',
     description: 'La empresa de logística y transportación debe ser responsable en el manejo de la mercancía y cumplir con las fechas de entrega prometidas. Además, deben tener una actitud proactiva en la identificación y resolución de problemas durante el transporte.'
   },

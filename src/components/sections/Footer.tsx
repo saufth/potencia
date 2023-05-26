@@ -1,11 +1,11 @@
 // Components
-import LinkToAction from '../navigation/LinkToContact'
+import LinkToContact from '../navigation/LinkToContact'
 import Image from 'next/image'
 import Link from '../navigation/core/Link'
 import LinkEmail from '../navigation/LinkEmail'
 import NextLink from 'next/link'
 // Config
-import { NAV, NAV_LIST } from '@/modules/navigation/config'
+import { NAV, navAriaLabel } from '@/modules/navigation/config'
 import { copyright, organization } from '@/modules/app/config'
 import { THEMES } from '@/modules/theme/config'
 import { SIZES } from '@/modules/sizing/config'
@@ -16,7 +16,7 @@ export default function Footer () {
       <div className='px-5%'>
         <div className='max-w-8xl py-16 mx-auto flex flex-col lg:flex-row justify-between gap-y-8'>
           <div className='lg:w-[232px] grid lg:block place-content-center'>
-            <NextLink href={NAV.home.href}>
+            <NextLink href={NAV[0].href}>
               <Image
                 className='w-auto h-6'
                 src='/images/logoname.svg'
@@ -26,15 +26,15 @@ export default function Footer () {
               />
             </NextLink>
           </div>
-          <nav>
+          <nav aria-label={navAriaLabel}>
             <ul className='w-full flex flex-col lg:flex-row gap-y-4 lg:gap-x-6 text-center'>
-              {NAV_LIST.map((navItem, key) => (
+              {NAV.map((option, key) => (
                 <li
                   className='last:hidden last:lg:block'
                   key={key}
                 >
-                  <Link href={navItem.href} theme={THEMES.secondary} size={SIZES.sm}>
-                    {navItem.children}
+                  <Link href={option.href} theme={THEMES.secondary} size={SIZES.sm}>
+                    {option.children}
                   </Link>
                 </li>
               ))}
@@ -44,7 +44,7 @@ export default function Footer () {
             <LinkEmail theme={THEMES.secondary} />
           </div>
           <div className='grid place-content-center lg:hidden'>
-            <LinkToAction />
+            <LinkToContact />
           </div>
         </div>
       </div>

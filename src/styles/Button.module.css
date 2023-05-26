@@ -3,7 +3,7 @@
 }
 
 .btn__primary {
-  @apply text-secondary bg-primary-light;
+  @apply text-secondary bg-primary-light hover:bg-primary;
 }
 
 .btn__secondary {

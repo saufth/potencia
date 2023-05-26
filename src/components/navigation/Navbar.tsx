@@ -9,9 +9,10 @@ import MenuButton from '../input/core/MenuButton'
 // Animation
 import { useCycle } from 'framer-motion'
 // Config
-import { NAV } from '@/modules/navigation/config'
+import { NAV, coreImgPath, navAriaLabel } from '@/modules/navigation/config'
 import { SIZES } from '@/modules/sizing/config'
 import { THEMES } from '@/modules/theme/config'
+import { IMG_EXT } from '@/modules/data-display/config'
 
 /**
  * The main navbar component of the application
@@ -30,11 +31,11 @@ export default function Navbar () {
       <header className='absolute top-0 left-0 right-0 z-70'>
         <div className='max-w-8xl h-24 mx-auto flex'>
           <div className=' w-full lg:w-1/4 pl-3% flex items-center justify-between lg:justify-normal'>
-            <NextLink href={NAV.home.href} onClick={closeToggle}>
+            <NextLink href={NAV[0].href} onClick={closeToggle}>
               <Image
                 className='w-auto h-8 md:h-8'
-                src={`/images/logoname${isOpen ? '' : '-white'}.svg`}
-                alt='Inicio'
+                src={`${coreImgPath}logoname${isOpen ? '' : '-white'}.${IMG_EXT.svg}`}
+                alt={NAV[0].children}
                 width={368}
                 height={56}
                 priority
@@ -42,17 +43,22 @@ export default function Navbar () {
             </NextLink>
           </div>
 
-          <div className='w-1/2 px-3% hidden lg:flex justify-between items-center'>
-            {[NAV.solutions, NAV.about, NAV.values, NAV.history].map(({ children, href }, key) => {
-              return (
-                <div className='hidden lg:block' key={key}>
-                  <Link href={href} size={SIZES.sm} theme={THEMES.secondary}>
-                    {children.toUpperCase()}
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
+          <nav
+            className='w-1/2 px-3% hidden lg:block'
+            aria-label={navAriaLabel}
+          >
+            <ul className='flex justify-between items-center last:hidden first:hidden'>
+              {NAV.map(({ children, href }, key) => {
+                return (
+                  <li className='hidden lg:block' key={key}>
+                    <Link href={href} size={SIZES.sm} theme={THEMES.secondary}>
+                      {children.toUpperCase()}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
 
           <div className='lg:w-1/4 pr-3% flex justify-end items-center md:gap-x-6'>
             <span className='hidden md:block'>

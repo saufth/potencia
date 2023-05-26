@@ -75,8 +75,8 @@ export default function Menu ({ isOpen, action }: MenuProps) {
           Menu
         </div>
 
-        {Object.values(NAV).map((option, key) => (
-          option.href !== NAV.contact.href
+        {NAV.map((option, key) => (
+          option.href !== NAV[5].href
             ? (
               <li onClick={action} key={key}>
                 <Link href={option.href} size={SIZES.lg}>

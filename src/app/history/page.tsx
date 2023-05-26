@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 /** The history page head metadata configuration */
 export const metadata: Metadata = {
-  title: NAV.history.children
+  title: NAV[4].children
 }
 
 /** The history page of the application */
@@ -14,7 +14,7 @@ export default function HistoryPage () {
     <main>
       <div className='w-full h-24 bg-secondary' />
       <section className='py-24'>
-        <div className='max-w-5xl px-5% mx-auto space-y-8 [&>p]:text-lg text-center-md'>
+        <div className='max-w-5xl px-5% mx-auto space-y-8 [&>p]:text-lg text-center md:text-left'>
           <header>
             <h2>Nuestra historia</h2>
           </header>

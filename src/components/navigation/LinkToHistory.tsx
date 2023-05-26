@@ -13,8 +13,8 @@ import type { Themeable } from '@/types/theme'
  */
 export default function LinkToHistory ({ theme }: Themeable) {
   return (
-    <LinkButton href={NAV.history.href} theme={theme}>
-      {NAV.history.children}
+    <LinkButton href={NAV[4].href} theme={theme}>
+      {NAV[4].children}
     </LinkButton>
   )
 }

@@ -19,8 +19,8 @@ export default function HomePage () {
   return (
     <main>
       <section className='h-3xl md:h-2xl relative'>
-        <div className='max-w-8xl h-full px-3% mx-auto flex flex-col justify-center text-white'>
-          <div className='max-w-4xl space-y-8 text-center-md'>
+        <div className='max-w-8xl h-full px-3% pt-24 mx-auto flex flex-col justify-center text-white'>
+          <div className='max-w-4xl space-y-8 text-center md:text-left'>
             <h1>{description}</h1>
             <p className='font-primary-bold text-lg'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi numquam illum qui
@@ -37,13 +37,13 @@ export default function HomePage () {
 
       <section
         id={SECTION_ROUTES.solutions}
-        className='py-24 text-white bg-secondary space-y-24'
+        className='py-24 text-white bg-secondary space-y-12 lg:space-y-24'
       >
         <div className='flex flex-col-reverse lg:flex-row items-center gap-y-12 lg:gap-0'>
           <Image
             src={`${sectionsImgPath}${SECTION_ROUTES.solutions}.${IMG_EXT.jpg}`}
             alt={SECTION_ROUTES.solutions}
-            className='lg:w-11/20 h-auto'
+            className='lg:w-11/20 h-auto hidden lg:block'
             width={1260}
             height={840}
           />
@@ -123,25 +123,32 @@ export default function HomePage () {
           <h2 className='text-white'>
             Nuestros valores
           </h2>
-          <p className='hp'>
+          <p className='font-primary-bold text-lg text-primary leading-relaxed'>
             Nuestros valores corporativos definen el estándar por el que nos esforzamos en
             cada área, reflejan la dedicación a la excelencia que brindamos en el servicio
             y son fundamentales para nuestra cultura empresarial.
           </p>
         </header>
 
-        {VALUES_NAMES.map((values, key) => (
+        {VALUES_NAMES.map((value, key) => (
           <article
             className='h-xs p-8 space-y-4 flex flex-col justify-center border boder-seondary'
             key={key}
           >
-            <div>
-              <h3>
-                {VALUES[values].heading}
+            <span className='flex items-center justify-center md:justify-start gap-x-5'>
+              <Image
+                src={`${sectionsImgPath}${value}.${IMG_EXT.svg}`}
+                alt={VALUES[value].heading}
+                className='w-auto h-8 md:h-12'
+                width={250}
+                height={250}
+              />
+              <h3 className='text-primary-light'>
+                {VALUES[value].heading}
               </h3>
-            </div>
+            </span>
             <p className='text-prmary leading-relaxed'>
-              {VALUES[values].description}
+              {VALUES[value].description}
             </p>
           </article>
         ))}

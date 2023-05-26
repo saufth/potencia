@@ -13,8 +13,8 @@ import type { Themeable } from '@/types/theme'
  */
 export default function LinkToServices ({ theme }: Themeable) {
   return (
-    <LinkButton href={NAV.solutions.href} theme={theme}>
-      {NAV.solutions.children}
+    <LinkButton href={NAV[1].href} theme={theme}>
+      {NAV[1].children}
     </LinkButton>
   )
 }

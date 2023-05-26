@@ -59,7 +59,7 @@ export interface LinkProps extends Navigable, Themeable {
 }
 
 /** Used for navigation configuration */
-export type NavConfig = Readonly<Record<AppRoute, Readonly<Required<Navigable>>>>
+export type NavConfig = ReadonlyArray<Navigable>
 
 /** The link button component properties */
 export interface LinkButtonProps extends LinkProps, Themeable {}

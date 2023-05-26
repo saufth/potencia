@@ -5,8 +5,6 @@ import Button from '@/components/input/core/Button'
 import { useRef, FormEvent, useState } from 'react'
 // Services
 import emailjs from '@emailjs/browser'
-// Config
-import { THEMES } from '@/modules/theme/config'
 
 /** The contact form of the application */
 export default function ContactForm () {
@@ -55,53 +53,48 @@ export default function ContactForm () {
 
   return (
     <>
-      <section className='max-w-4xl px-5% py-24 mx-auto space-y-12'>
-        <header>
-          <h2>Pongamonos en contacto</h2>
-        </header>
-        <form
-          className='space-y-8'
-          onSubmit={sendEmail}
-          ref={formRef}
-        >
-          <div>
-            <input
-              className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
-              type='text'
-              name='contact_name'
-              id='contact_name'
-              placeholder='Tu nombre'
-              required
-            />
-          </div>
-          <div>
-            <input
-              className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
-              type='email'
-              name='contact_email'
-              id='contact_email'
-              placeholder='Tu Email'
-              required
-            />
-          </div>
-          <div>
-            <textarea
-              className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
-              name='contact_description'
-              id='contact_description'
-              rows={1}
-              placeholder='Cuentanos sobre tu proyecto'
-              defaultValue=''
-              required
-            />
-          </div>
-          <div className='pt-6 flex justify-center'>
-            <Button type='submit' theme={THEMES.secondary} disabled={isSendButtonDisabled}>
-              Enviar
-            </Button>
-          </div>
-        </form>
-      </section>
+      <form
+        className='space-y-8'
+        onSubmit={sendEmail}
+        ref={formRef}
+      >
+        <div>
+          <input
+            className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
+            type='text'
+            name='contact_name'
+            id='contact_name'
+            placeholder='Tu nombre'
+            required
+          />
+        </div>
+        <div>
+          <input
+            className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
+            type='email'
+            name='contact_email'
+            id='contact_email'
+            placeholder='Tu Email'
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            className='w-full px-4 py-3 border-b border-b-stone-300 resize-none'
+            name='contact_description'
+            id='contact_description'
+            rows={1}
+            placeholder='Cuentanos sobre tu proyecto'
+            defaultValue=''
+            required
+          />
+        </div>
+        <div className='pt-6 flex justify-center'>
+          <Button type='submit' disabled={isSendButtonDisabled}>
+            Enviar
+          </Button>
+        </div>
+      </form>
       <dialog className='p-5 m-auto space-y-3' ref={dialogRef}>
         <div className='pb-5 text-lg text-stone-500 border-b border-b-stone-300'>
           {modalMessageState}
