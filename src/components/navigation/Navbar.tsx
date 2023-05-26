@@ -47,10 +47,10 @@ export default function Navbar () {
             className='w-1/2 px-3% hidden lg:block'
             aria-label={navAriaLabel}
           >
-            <ul className='flex justify-between items-center last:hidden first:hidden'>
+            <ul className='h-full flex justify-between items-center'>
               {NAV.map(({ children, href }, key) => {
                 return (
-                  <li className='hidden lg:block' key={key}>
+                  <li className='first:hidden last:hidden' key={key}>
                     <Link href={href} size={SIZES.sm} theme={THEMES.secondary}>
                       {children.toUpperCase()}
                     </Link>
