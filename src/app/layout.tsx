@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   manifest: new URL('site.webmanifest', baseUrl),
   referrer: 'origin-when-cross-origin',
+  robots: 'index, follow',
   openGraph: {
     title: organization,
     description,
