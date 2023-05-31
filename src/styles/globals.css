@@ -65,4 +65,10 @@
     font-family: Primary black;
     src: url(../../public/fonts/primary/black.ttf);
   }
+
+  /* Video */
+
+  video::-webkit-media-controls {
+    display:none !important;
+  }
 }
