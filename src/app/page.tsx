@@ -92,9 +92,7 @@ export default function HomePage () {
           <div className='max-w-4xl space-y-8 text-center md:text-left'>
             <h1>{description}</h1>
             <p className='font-primary-bold text-lg'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi numquam illum qui
-              culpa ut! Quisquam perferendis eligendi possimus consectetur quam, blanditiis
-              ipsum ut corrupti rem optio porro numquam corporis aliquid!
+              Logistica y transporte seguro y a la medida de tus necesidades.
             </p>
             <div className='flex justify-center md:block'>
               <LinkToServices />

@@ -2,7 +2,7 @@
   "name": "potencia",
   "version": "1.1.4",
   "private": true,
-  "homepage": "https://potencia.vercel.app/",
+  "homepage": "https://dpotencia.com/",
   "engines": {
     "node": "18.x",
     "pnpm": "8.x",
