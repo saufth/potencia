@@ -88,11 +88,13 @@ export default function HomePage () {
   return (
     <main>
       <section className='h-3xl md:h-2xl relative'>
-        <div className='max-w-8xl h-full px-3% pt-24 mx-auto flex flex-col justify-center text-white'>
+        <div className='max-w-8xl h-full px-3% pt-12 md:pt-24 mx-auto flex flex-col justify-center text-white'>
           <div className='max-w-4xl space-y-8 text-center md:text-left'>
             <h1>{description}</h1>
-            <p className='font-primary-bold text-lg'>
-              Logistica y transporte seguro a la medida de tus necesidades.
+            <p className='font-primary-bold text-xl'>
+              Logistica y transporte seguro
+              <br className='md:hidden' />
+              a la medida de tus necesidades.
             </p>
             <div className='flex justify-center md:block'>
               <LinkToServices />
