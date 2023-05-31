@@ -92,7 +92,7 @@ export default function HomePage () {
           <div className='max-w-4xl space-y-8 text-center md:text-left'>
             <h1>{description}</h1>
             <p className='font-primary-bold text-lg'>
-              Logistica y transporte seguro y a la medida de tus necesidades.
+              Logistica y transporte seguro a la medida de tus necesidades.
             </p>
             <div className='flex justify-center md:block'>
               <LinkToServices />
