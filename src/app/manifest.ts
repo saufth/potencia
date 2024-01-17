@@ -1,38 +1,29 @@
-// Config
-import { organization, themeColor } from '@/modules/app/config'
-// Types
-import type { MetadataRoute } from 'next'
+import { type MetadataRoute } from 'next'
+import { siteConfig } from '@/config/site'
 
-/** Generate the manifest document */
-export default function sitemap () : MetadataRoute.Manifest {
+export default function Manifest () : MetadataRoute.Manifest {
   return {
-    name: organization,
-    short_name: 'AppManifest',
+    name: siteConfig.name,
+    short_name: siteConfig.name,
+    description: `${siteConfig.name} official website`,
+    start_url: '/',
+    orientation: 'portrait',
+    display: 'standalone',
+    theme_color: '#000000',
+    background_color: '#000000',
+    prefer_related_applications: true,
     icons: [
       {
-        src: '/icon1.png',
-        sizes: '16x16',
-        type: 'image/png'
-      },
-      {
-        src: '/icon2.png',
-        sizes: '32x32',
-        type: 'image/png'
-      },
-      {
-        src: '/icon3.png',
+        src: '/android-chrome-192x192.png',
         sizes: '192x192',
-        type: 'image/png'
+        type: 'image/png',
+        purpose: 'maskable'
       },
       {
-        src: '/icon4.png',
+        src: '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png'
       }
-    ],
-    orientation: 'portrait',
-    display: 'standalone',
-    theme_color: themeColor,
-    background_color: themeColor
+    ]
   }
 }
